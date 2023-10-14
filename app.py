@@ -2,8 +2,11 @@ import joblib
 import numpy as np
 from flask import Flask, request, jsonify
 import sklearn
+from flask_cors import CORS
 
 app = Flask(__name__)
+
+CORS(app)
 
 # Load the trained model
 model = joblib.load('StockPrediction_model.pkl')
